@@ -8,7 +8,10 @@ const { signup, renderLoginForm } = require("../controllers/user");
 router.use(express.urlencoded({ extended: true }));
 
 userController = require("../controllers/user");
+const listingControlers = require("../controllers/listing.js")
 
+router.route("/")
+.get(listingControlers.index);
 
 router.route("/login")
 .get(userController.renderLoginForm)
